@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/amberheard/amberheard.iml" filepath="$PROJECT_DIR$/amberheard/amberheard.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewstudy.iml" filepath="$PROJECT_DIR$/viewstudy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/waterfall/waterfall.iml" filepath="$PROJECT_DIR$/waterfall/waterfall.iml" />
     </modules>
   </component>
 </project>

@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         mFragments = new ArrayList<>();
         for (int i = 0; i < mTitles.length; i++) {
 //            MyFragment listFragment = MyFragment.newInstance(mTitles[i]);
-            mFragments.add(new MyFragment());
+            mFragments.add(new FragmentA());
         }
         // 第二步：为ViewPager设置适配器
         BaseFragmentAdapter adapter =
