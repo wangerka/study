@@ -44,10 +44,12 @@ public class Amber extends AppCompatActivity {
                     con.setRequestMethod("GET");
                     if(con.getResponseCode() == 200){
                         Bundle b = new Bundle();
-                        b.putParcelable("bitmap", decodeBitMap(con.getInputStream()));
+                        InputStream in = con.getInputStream();
+                        b.putParcelable("bitmap", decodeBitMap(in));
                         Message msg = new Message();
                         msg.setData(b);
                         handler.sendMessage(msg);
+                        in.close();
 //                        image.setImageBitmap(bitmap);
                     }
                 } catch (MalformedURLException e) {
@@ -62,6 +64,6 @@ public class Amber extends AppCompatActivity {
     public Bitmap decodeBitMap(InputStream in){
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = 2;
-        return BitmapFactory.decodeStream(in, null, options);
+        return BitmapFactory.decodeStream(in, null, options);//第二個參數是圖片的padding
     }
 }
