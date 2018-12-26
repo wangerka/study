@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ddd.demo">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,6 +25,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".anim.Animationsss" android:label="@string/anim">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.ddd.demo.category.DEMO" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".amber.Amber" android:label="@string/amber">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="com.ddd.demo.category.DEMO" />

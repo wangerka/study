@@ -1,11 +1,12 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">StudyMakeMeHappy</string>
     <string name="constraintLayout">ConstraintLayout</string>
     <string name="anim">Anims</string>
     <string name="alpha">alpha</string>
     <string name="rotate">rotate</string>
     <string name="scale">scale</string>
     <string name="translate">translate</string>
+    <string name="amber">Amber</string>
     <string name="str">"材料通过在绝缘体上形成半导体薄膜，SOI材料具有了体硅所无法比拟的优点：可以实现集成电路中元器件的介质隔离，彻底消除了体硅CMOS电路中的寄生闩锁效应；采用这种材料制成的集成电路还具有寄生电容小、集成密度高、速度快、工艺简单、短沟道效应小及特别适用于低压低功耗电路等优势，因此可以说SOI将有可能成为深亚微米的低压、低功耗集成电路的主流技术。此外，SOI材料还被用来制造MEMS光开关，如利用体微机械加工技术。
 SOI是硅晶体管结构在绝缘体之上的意思，原理就是在Silicon（硅）晶体管之间，加入绝缘体物质，可使两者之间的寄生电容比原来的少上一倍。优点是可以较易提升时脉，并减少电流漏电成为省电的IC。原本应通过交换器的电子，有些会钻入硅中造成浪费。SOI可防止电子流失。摩托罗拉宣称中央处理器可因此提升时脉20%，并减低耗电30%。除此之外，还可以减少一些有害的电气效应。还有一点，可以说是很多超频玩家所感兴趣的，那就是它的工作温度可高达300°C，减少过热的问题。 [1]
 发展历史编辑
