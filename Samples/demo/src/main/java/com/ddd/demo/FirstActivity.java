@@ -33,7 +33,7 @@ public class FirstActivity extends ListActivity {
         List<ResolveInfo> infos = pm.queryIntentActivities(intent,0);
         for(ResolveInfo info : infos){
             Map<String, Object> map = new HashMap<>();
-            map.put("title", info.activityInfo.name);//info.loadLabel(pm));
+            map.put("title", info.loadLabel(pm));
             map.put("intent",activityIntent(info.activityInfo.packageName,
                     info.activityInfo.name));
             data.add(map);
@@ -52,6 +52,5 @@ public class FirstActivity extends ListActivity {
         super.onListItemClick(l, v, position, id);
         Map<String, Object> map = (Map<String, Object>)l.getItemAtPosition(position);
         startActivity((Intent) map.get("intent"));
-
     }
 }
