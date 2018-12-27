@@ -1,1 +1,1 @@
-include ':app', ':demo', ':butterknife'
+include ':app', ':demo', ':butterknife', ':retrofit'
