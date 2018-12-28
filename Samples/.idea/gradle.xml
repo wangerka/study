@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/butterknife" />
             <option value="$PROJECT_DIR$/demo" />
+            <option value="$PROJECT_DIR$/recyclerview" />
             <option value="$PROJECT_DIR$/retrofit" />
           </set>
         </option>
