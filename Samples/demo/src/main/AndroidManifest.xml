@@ -36,6 +36,13 @@
                 <category android:name="com.ddd.demo.category.DEMO" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".jsondemo.JSONDmeo" android:label="@string/json">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.ddd.demo.category.DEMO" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
