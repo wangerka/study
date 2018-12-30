@@ -43,6 +43,12 @@
                 <category android:name="com.ddd.demo.category.DEMO" />
             </intent-filter>
         </activity>
+        <activity android:name=".listview_pic.ListViewNetPic" android:label="@string/piclist">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.ddd.demo.category.DEMO" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -1,5 +1,8 @@
 package com.ddd.demo.utils;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -45,5 +48,20 @@ public class NetUtil {
         inputStream.close();
         out.close();
         return out.toString();
+    }
+
+    public static Bitmap decodePic(String url){
+        try {
+            URL u = new URL(url);
+            HttpURLConnection conn = (HttpURLConnection) u.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setConnectTimeout(5000);
+            if(conn.getResponseCode() == 200){
+                return BitmapFactory.decodeStream(conn.getInputStream());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
