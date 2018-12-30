@@ -1,4 +1,4 @@
-package com.ddd.demo;
+package com.ddd.demo.coordinatorLayout;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.ddd.demo.R;
 
 public class FragmentA extends Fragment {
     @Nullable

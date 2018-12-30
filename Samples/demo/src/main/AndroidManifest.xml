@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" android:label="@string/constraintLayout">
+        <activity android:name=".coordinatorLayout.MainActivity" android:label="@string/constraintLayout">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="com.ddd.demo.category.DEMO" />
@@ -44,6 +44,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".listview_pic.ListViewNetPic" android:label="@string/piclist">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.ddd.demo.category.DEMO" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".retrofit.MainActivity" android:label="@string/retrofit">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="com.ddd.demo.category.DEMO" />

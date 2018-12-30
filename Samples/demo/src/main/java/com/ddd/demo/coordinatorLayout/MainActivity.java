@@ -1,16 +1,15 @@
-package com.ddd.demo;
+package com.ddd.demo.coordinatorLayout;
 
-import android.content.Context;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentTabHost;
-import android.support.v4.app.ListFragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+
+import com.ddd.demo.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
         mFragments = new ArrayList<>();
         for (int i = 0; i < mTitles.length; i++) {
-//            MyFragment listFragment = MyFragment.newInstance(mTitles[i]);
             mFragments.add(new FragmentA());
         }
         // 第二步：为ViewPager设置适配器
