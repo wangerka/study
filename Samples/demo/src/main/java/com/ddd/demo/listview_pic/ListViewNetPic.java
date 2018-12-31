@@ -13,6 +13,7 @@ import com.ddd.demo.listview_pic.bean.Result;
 import com.ddd.demo.utils.NetUtil;
 import com.google.gson.Gson;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 public class ListViewNetPic extends AppCompatActivity {
@@ -33,7 +34,12 @@ public class ListViewNetPic extends AppCompatActivity {
     class JsonTask extends AsyncTask<String, Void, String>{
         @Override
         protected String doInBackground(String... strings) {
-            return NetUtil.parseData(strings[0]);
+            try {
+                return NetUtil.readStream(NetUtil.parseData(strings[0]));
+            } catch (IOException e) {
+                e.printStackTrace();
+                return null;
+            }
         }
 
         @Override

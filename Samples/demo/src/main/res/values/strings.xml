@@ -18,6 +18,7 @@ SOI行业联盟是负责推广SOI技术，成员包括SOI技术的发明者IBM�
     <string name="jsonobject">JSONOBJECT</string>
     <string name="gson">GSON</string>
     <string name="fastjson">FASTJSON</string>
+    <string name="xmldemo">XMLDEMO</string>
     <string name="sax">sax</string>
     <string name="pull">pull</string>
     <string name="dom">dom</string>

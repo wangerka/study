@@ -56,6 +56,12 @@
                 <category android:name="com.ddd.demo.category.DEMO" />
             </intent-filter>
         </activity>
+        <activity android:name=".xmldemo.XMLDemo" android:label="@string/xmldemo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.ddd.demo.category.DEMO" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

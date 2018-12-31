@@ -17,6 +17,7 @@ import com.ddd.demo.R;
 import com.ddd.demo.jsondemo.bean.WeatherDa;
 import com.ddd.demo.utils.NetUtil;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -178,7 +179,12 @@ public class JSONDmeo extends AppCompatActivity implements View.OnClickListener 
         protected String doInBackground(String... strings) {
             String weatherUrl = strings[0];
             parseType = strings[1];
-            return NetUtil.parseData(weatherUrl);
+            try {
+                return NetUtil.readStream(NetUtil.parseData(weatherUrl));
+            } catch (IOException e) {
+                e.printStackTrace();
+                return null;
+            }
         }
 
         @Override
