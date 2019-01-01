@@ -24,5 +24,6 @@ SOI行业联盟是负责推广SOI技术，成员包括SOI技术的发明者IBM�
     <string name="dom">dom</string>
     <string name="piclist">ListPic</string>
     <string name="retrofit">retrofit</string>
+    <string name="timeline">TimeLine</string>
 
 </resources>
