@@ -3,6 +3,7 @@
     package="com.ddd.demo">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -63,6 +64,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".timeline.TimeLineActivity" android:label="@string/timeline">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.ddd.demo.category.DEMO" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".camerademo.CameraDemo" android:label="CameraDemo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="com.ddd.demo.category.DEMO" />
