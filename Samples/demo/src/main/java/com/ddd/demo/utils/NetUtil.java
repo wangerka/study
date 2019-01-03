@@ -2,6 +2,7 @@ package com.ddd.demo.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -18,6 +19,7 @@ public class NetUtil {
             conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setConnectTimeout(5000);
+//            conn.setRequestProperty("Accept-Encoding", "");
             if(conn.getResponseCode() == 200){
                 InputStream in = conn.getInputStream();
                 return in;
@@ -27,20 +29,31 @@ public class NetUtil {
         }catch (IOException e){
             e.printStackTrace();
         } finally {
-            if(conn != null) conn.disconnect();
+//            if(conn != null) conn.disconnect();
         }
         return null;
     }
 
-    public static String readStream(InputStream inputStream)throws IOException{
+    public static String readStream(InputStream inputStream){
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         byte[] buffer= new byte[1024];
         int length;
-        while((length = inputStream.read(buffer)) != -1){
-            out.write(buffer,0,length);
+        try {
+            while((length = inputStream.read(buffer)) != -1){
+                out.write(buffer,0,length);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.i("gejun",e.toString());
+        } finally {
+            try {
+                inputStream.close();
+                out.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        inputStream.close();
-        out.close();
+
         return out.toString();
     }
 

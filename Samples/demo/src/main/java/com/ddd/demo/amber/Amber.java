@@ -63,7 +63,7 @@ public class Amber extends AppCompatActivity {
 
     public Bitmap decodeBitMap(InputStream in){
         BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize = 2;
+//        options.inSampleSize = 2;
         return BitmapFactory.decodeStream(in, null, options);//第二個參數是圖片的padding
     }
 }
