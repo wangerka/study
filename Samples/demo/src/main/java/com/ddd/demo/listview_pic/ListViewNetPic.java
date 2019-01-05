@@ -34,12 +34,7 @@ public class ListViewNetPic extends AppCompatActivity {
     class JsonTask extends AsyncTask<String, Void, String>{
         @Override
         protected String doInBackground(String... strings) {
-            try {
-                return NetUtil.readStream(NetUtil.parseData(strings[0]));
-            } catch (IOException e) {
-                e.printStackTrace();
-                return null;
-            }
+            return NetUtil.readStream(NetUtil.parseData(strings[0]));
         }
 
         @Override

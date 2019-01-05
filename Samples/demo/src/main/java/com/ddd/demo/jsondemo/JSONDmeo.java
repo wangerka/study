@@ -98,21 +98,17 @@ public class JSONDmeo extends AppCompatActivity implements View.OnClickListener 
         fastjson.setOnClickListener(this);
     }
     
-    private static final String TYPE_JSONOBJECT = "jsonobject";
-    private static final String TYPE_GSON = "gson";
-    private static final String TYPE_FASTJSON = "fastjson";
-
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.jsonobject:
-                new WeatherTask().execute(path,TYPE_JSONOBJECT);
+                new WeatherTask().execute(path,SimpleFactory.TYPE_JSONOBJECT);
                 break;
             case R.id.gson:
-                new WeatherTask().execute(path,TYPE_GSON);
+                new WeatherTask().execute(path,SimpleFactory.TYPE_GSON);
                 break;
             case R.id.fastjson:
-                new WeatherTask().execute(path,TYPE_FASTJSON);
+                new WeatherTask().execute(path,SimpleFactory.TYPE_FASTJSON);
                 break;
         }
     }
@@ -179,12 +175,7 @@ public class JSONDmeo extends AppCompatActivity implements View.OnClickListener 
         protected String doInBackground(String... strings) {
             String weatherUrl = strings[0];
             parseType = strings[1];
-            try {
-                return NetUtil.readStream(NetUtil.parseData(weatherUrl));
-            } catch (IOException e) {
-                e.printStackTrace();
-                return null;
-            }
+            return NetUtil.readStream(NetUtil.parseData(weatherUrl));
         }
 
         @Override
@@ -202,18 +193,7 @@ public class JSONDmeo extends AppCompatActivity implements View.OnClickListener 
 
     public void parseJsonString(String json, String type){
         weatherList.clear();
-        ParseFactory factory = null;
-        switch(type){
-            case TYPE_FASTJSON:
-                factory = new FastJsonFactory();
-                break;
-            case TYPE_GSON:
-                factory = new GsonFactory();
-                break;
-            case TYPE_JSONOBJECT:
-                factory = new JSONObjectFactory();
-                break;
-        }
+        ParseFactory factory = SimpleFactory.create(type);
         factory.parse(weatherList, json);
     }
 
