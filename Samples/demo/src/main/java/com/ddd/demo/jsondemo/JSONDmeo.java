@@ -17,9 +17,12 @@ import com.ddd.demo.R;
 import com.ddd.demo.jsondemo.bean.WeatherDa;
 import com.ddd.demo.utils.NetUtil;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.ddd.demo.jsondemo.SimpleFactory.TYPE_FASTJSON;
+import static com.ddd.demo.jsondemo.SimpleFactory.TYPE_GSON;
+import static com.ddd.demo.jsondemo.SimpleFactory.TYPE_JSONOBJECT;
 
 /**
  * 不同的方式解析，工厂模式？
@@ -102,13 +105,13 @@ public class JSONDmeo extends AppCompatActivity implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.jsonobject:
-                new WeatherTask().execute(path,SimpleFactory.TYPE_JSONOBJECT);
+                new WeatherTask().execute(path,TYPE_JSONOBJECT);
                 break;
             case R.id.gson:
-                new WeatherTask().execute(path,SimpleFactory.TYPE_GSON);
+                new WeatherTask().execute(path,TYPE_GSON);
                 break;
             case R.id.fastjson:
-                new WeatherTask().execute(path,SimpleFactory.TYPE_FASTJSON);
+                new WeatherTask().execute(path,TYPE_FASTJSON);
                 break;
         }
     }
@@ -193,8 +196,20 @@ public class JSONDmeo extends AppCompatActivity implements View.OnClickListener 
 
     public void parseJsonString(String json, String type){
         weatherList.clear();
-        ParseFactory factory = SimpleFactory.create(type);
-        factory.parse(weatherList, json);
+        ParseFactory factory=null;
+        switch(type){
+            case TYPE_FASTJSON:
+                factory = new FastJsonFactory();
+                break;
+            case TYPE_GSON:
+                factory = new GsonFactory();
+                break;
+            case TYPE_JSONOBJECT:
+                factory = new JSONObjectFactory();
+                break;
+        }
+//        ParseFactory factory = SimpleFactory.create(type);
+        if(factory != null) factory.parse(weatherList, json);
     }
 
     /*private void jsonobjectParse(String json) {
